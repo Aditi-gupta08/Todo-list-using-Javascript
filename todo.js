@@ -49,8 +49,6 @@ function ShowNode( idd, myObj )
     console.log("printnode: ", idd, myObj);
     var node = document.createElement("div");
     node.setAttribute("id", idd ); 
-    //node.classList.add("col-10");
-    //node.classList.add("col-md-12");
     node.classList.add("row");
     node.classList.add("task");
     node.classList.add("p-0");
