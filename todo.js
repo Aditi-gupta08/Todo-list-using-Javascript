@@ -55,20 +55,21 @@ function ShowNode( idd, myObj )
     node.classList.add("p-md-2");
     node.classList.add("m-4")
     
-    node.innerHTML = "<div class='col-10 col-md-11 d-flex mt-2'>" +
-                        "<input type='checkbox' id='checkBox"+ idd +"' class='check mr-2 mt-1' onclick='toggleCheckbox(this)'> " +
-                        "<p class='task-info'>" + myObj.taskName + "</p>" +
-                      "</div>" +
 
-                      "<div class='col-2 col-md-1 cross'>" +
-                        "<span onclick='DeleteOne(this)'> <i class='fa fa-trash' aria-hidden='true'></i> </span>" +
-                      "</div>";
+    node.innerHTML = `<div class='col-10 col-md-11 d-flex mt-2'> 
+                          <input type='checkbox' id='checkBox${idd}' class='check mr-2 mt-1' onclick='toggleCheckbox(this)'>
+                          <p class='task-info'>  ${myObj.taskName}  </p>
+                      </div> 
+
+                      <div class='col-2 col-md-1 cross'>
+                          <span onclick='DeleteOne(this)'> <i class='fa fa-trash' aria-hidden='true'></i> </span>
+                      </div> `
     
     document.getElementById("content").appendChild(node);
     
     if( myObj.checkStatus == true)
     {
-        var checkBoxId = "checkBox"+idd;
+        var checkBoxId = `checkBox${idd}`;
         var checkBox = document.getElementById(checkBoxId);
         checkBox.checked = true;
         
